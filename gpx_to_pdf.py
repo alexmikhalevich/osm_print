@@ -44,6 +44,10 @@ if args.api_key:
 else:
     APIkey = os.getenv("THUNDERFOREST_API_KEY")
 
+if APIkey == "":
+    print("No API key provided! Please, consult README.md file.")
+    exit()
+
 layer = f"https://a.tile.thunderforest.com/{args.tiles}/!z/!x/!y.png?apikey={APIkey}"
 api_counter = 0
 chunk_counter = 1
